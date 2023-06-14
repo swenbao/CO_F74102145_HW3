@@ -79,7 +79,7 @@ void cache_sim_t::init()
 
   tags = new uint64_t[sets*ways]();  // 一個 entry 有 ways 個 block，總共有 sets 個 entries，所以 tags 有 sets*ways 格
   timer = new uint64_t[sets*ways](); // timer for every block
-  std::fill(timer, timer + sets*ways, 0);
+  std::fill(timer, timer + sets*ways, -1);
   
   read_accesses = 0; 
   read_misses = 0;
